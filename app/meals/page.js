@@ -1,5 +1,5 @@
 import MealsGrid from "@/components/meals/Meals-Grid";
-import getMeals from "@/lib/meals";
+import {getMeals} from "@/lib/meals";
 import Link from "next/link";
 import { Suspense } from "react";
 
