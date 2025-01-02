@@ -2,8 +2,8 @@ import { getMealsDetails } from "@/lib/meals";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default function mealsItem({ params }) {
-  const meal = getMealsDetails(params.mealSlug);
+export default async function mealsItem({ params }) {
+  const meal = await getMealsDetails(params.mealSlug);
 
   if (!meal) {
     notFound();
@@ -23,7 +23,7 @@ export default function mealsItem({ params }) {
           <p className="custom-para-text">{meal.summary}</p>
         </div>
       </header>
-      <main className="w-8/12 mx-auto relative px-6 pb-6 bg-yellow-300 bg-opacity-80 rounded-xl">
+      <main className="w-8/12 mx-auto relative px-6 py-6 bg-yellow-300 bg-opacity-80 rounded-xl">
         <p
           className="text-black"
           dangerouslySetInnerHTML={{
