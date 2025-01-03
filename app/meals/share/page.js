@@ -1,4 +1,5 @@
 import ImagePicker from "@/components/Image-Picker";
+import MealsFormSubmission from "@/components/meals/meals-form-submission";
 import { ShareMealForm } from "@/lib/shareMealForm";
 
 export default function ShareMealPage() {
@@ -84,12 +85,7 @@ export default function ShareMealPage() {
           </div>
           <ImagePicker label="image" name="image"/>
           <div>
-            <button
-              type="submit"
-              className="w-full p-2 rounded-sm bg-red-600  text-center"
-            >
-              Share Meal
-            </button>
+            <MealsFormSubmission/>
           </div>
         </form>
       </main>
