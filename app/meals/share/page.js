@@ -1,8 +1,13 @@
+'use client'; 
+
 import ImagePicker from "@/components/Image-Picker";
 import MealsFormSubmission from "@/components/meals/meals-form-submission";
 import { ShareMealForm } from "@/lib/shareMealForm";
+import { useActionState } from "react";
 
 export default function ShareMealPage() {
+  const [ state, formState] = useActionState(ShareMealForm, {message: null});
+
   return (
     <div className="w-screen overflow-x-hidden min-h-screen relative py-20">
       <header className="w-10/12 mx-auto relative pt-20 pb-8">
@@ -16,7 +21,7 @@ export default function ShareMealPage() {
       <main className="w-10/12 mx-auto relative">
         <form
           className="w-1/2 relative flex flex-col gap-5"
-          action={ShareMealForm}
+          action={formState}
         >
           <div className="flex-center gap-2">
             <div className="flex flex-col w-full gap-1">
@@ -84,6 +89,7 @@ export default function ShareMealPage() {
             ></textarea>
           </div>
           <ImagePicker label="image" name="image"/>
+          {state.message && <p>{state.message}</p>}
           <div>
             <MealsFormSubmission/>
           </div>

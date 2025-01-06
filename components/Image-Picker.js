@@ -23,11 +23,12 @@ export default function ImagePicker({ label, name }) {
         setSelectedImage(fileReader.result)
     }
     fileReader.readAsDataURL(file);
+
   };
 
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className="font-bold text-base uppercase">{label}</label>
       <div>
         <div className="w-[150px] h-[150px] relative rounded-md border flex-center">
             {selectedImage ? <Image

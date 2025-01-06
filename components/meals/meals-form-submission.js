@@ -1,8 +1,11 @@
 "use client";
-import { useActionState } from "react";
+
+import { useFormStatus } from "react-dom";
+
+// import { useActionState } from "react";
 
 export default function MealsFormSubmission() {
-  const { pending } = useActionState();
+  const { pending } = useFormStatus();
   return (
     <button
       disabled={pending}
