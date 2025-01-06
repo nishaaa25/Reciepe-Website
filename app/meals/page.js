@@ -3,6 +3,11 @@ import {getMeals} from "@/lib/meals";
 import Link from "next/link";
 import { Suspense } from "react";
 
+export const metadata = {
+  title: 'All meals',
+  description: 'Delicious meals, shared by a food-loving community.',
+}; 
+
 async function Meals() {
   const meals = await getMeals();
 
